@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Technical Documentation Page</title>
+  
+  
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  <!DOCTYPE html>
+<html>
+  <!--<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>-->
+  <main id="main-doc">
+    <section class="main-section" id="Introduction">
+      <header>Introduction</header>
+      <p>Bash is a Unix shell and command language written by Brian Fox for the GNU Project as a free software replacement for the Bourne shell. First released in 1989, it has been distributed widely as the default login shell for most Linux distributions and Apple's macOS (formerly OS X). A version is also available for Windows 10. It is also the default user shell in Solaris 11.</p>
+      <p>Bash is a command processor that typically runs in a text window where the user types commands that cause actions. Bash can also read and execute commands from a file, called a shell script. Like all Unix shells, it supports filename globbing (wildcard matching), piping, here documents, command substitution, variables, and control structures for condition-testing and iteration. The keywords, syntax and other basic features of the language are all copied from sh. Other features, e.g., history, are copied from csh and ksh. Bash is a POSIX-compliant shell, but with a number of extensions.</p>
+      <p>The shell's name is an acronym for Bourne-again shell, a pun on the name of the Bourne shell that it replaces and on the common term "born again".</p>
+    </section>
+    <section class="main-section" id="Scope">
+      <header>Scope</header>
+      <p>During your time as an user you will use the terminal to perform tasks such as:</p>
+      <ol>
+        <li>Print "Hello World"</li>
+        <li>Creating folders</li>
+        <li>Deleting files</li>
+        <li>Scripting</li>
+        <li>Variables</li>
+      </ol>
+    </section>
+     <section class="main-section" id="Hello_World">
+      <header>Hello World</header>
+      <p>To get started with writing Bash, open the Terminal and write your first "Hello world" Bash code:</p>
+       <pre><code>echo "Hello World"</code></pre>
+       <p>The command <code>echo</code> display message on screen, writes each given STRING to standard output, with a space between each and a newline after the last one.
+    </section>
+     <section class="main-section" id="Creating_folders">
+      <header>Creating folders</header>
+      <p>Creating folders can be done simply in the file manager nautilus by right clicking and selecting 'Create Folder', but if you want to do this from a cli environment you would type the following in the terminal:</p>
+      <pre><code>mkdir /home/user/Desktop/new_folder</code></pre>
+      <p>the <code>mkdir</code> (make directory) command creates the folder then the file path tells it where to create the folder.</p>
+    </section>
+     <section class="main-section" id="Deleting_files">
+      <header>Deleting files</header>
+      <p>Deleting files are done with the <code>rm</code> command as follows:</p>
+      <pre><code>rm /home/user/file_to_be_deleted</code></pre>
+      <p>The <code>rm</code> (remove) command is used to remove anything through a cli environment.</p>
+    </section>
+    <section class="main-section" id="Scripting">
+      <header>Scripting</header>
+      <p><strong>NOTE:</strong> The commands given in the scripting section are to be put into the text editor and not in the terminal unless instructed otherwise.</p>
+      <p>Bash is primarily a scripting language, so it would be a crime not to talk about scripting. Let's dive straight in with a bash script. More precisely the infamous "Hello World" script. You can create a bash script by opening your favorite text editor to edit your script and then saving it (typically the .sh file extension is used for your reference, but is not necessary. In our examples, we will be using the .sh extension).</p>
+      <pre><code>#!/bin/bash
+echo "Hello, World"</code></pre>
+      <p>The first line of the script just defines which interpreter to use. NOTE: There is no leading whitespace before #!/bin/bash. That's it, simple as that. To run a bash script you first have to have the correct file permissions. We do this with chmod command in terminal (change mode) as follows:</p>
+      <pre><code>chmod a+x /where/i/saved/it/hello_world.sh   #Gives everyone execute permissions
+# OR
+chmod 700 /where/i/saved/it/hello_world.sh   #Gives read,write,execute permissions to the Owner</code></pre>
+      <p>This will give the file the appropriate permissions so that it can be executed. <strong>Now open a terminal and run the script like this:</strong></p>
+      <pre><code>/where/i/saved/it/hello_world.sh</code></pre>
+      <p>Now, lets get to more interesting aspects of Bash programming, Variables!</p>
+    </section>
+    <section class="main-section" id="Variables">
+      <header>Variables</header>
+      <p>Variables basically store information. You set variables like this using text editor:</p>
+      <pre><code>var="FOO"</code></pre>
+      <p>'var' can be anything you want as long as it doesn't begin with a number. "FOO" can be anything you want.</p>
+      <p>To access the information from the variable you need to put a '$' in front of it like this:</p>
+      <pre><code>var="FOO"
+echo $var</code></pre>
+      <p>Try entering those lines into a terminal one at a time; you will see that the first one just gives you another prompt and the second one prints FOO.</p>
+      <p>But that's all a bit boring. So let's make a script to ask the user for some information and then echo that information.</p>
+      <pre><code>#!/bin/bash
+clear
+echo "Please enter your name"
+read name
+echo "Please enter your age"
+read age
+echo "Please enter your sex. Male/Female"
+read sex
+echo "So you're a $age year old $sex called $name"</code></pre>
+      <p>read allows the user to input information where it is then stored in the variable defined after the read. read variable would take whatever input the user entered and store it in <code>$variable</code>. We then access this with <code>echo</code> and set up a neat sentence.</p>
+    </section>
+  </main>
+  <nav id="navbar">
+    <header>A Brief Bash Documentation</header>
+    <ul class="nav-list">
+    <li><a class="nav-link" href="#Introduction">Introduction</a></li>
+    <li><a class="nav-link" href="#Scope">Scope</a></li>
+     <li><a class="nav-link" href="#Hello_World">Hello World</a></li>
+     <li><a class="nav-link" href="#Creating_folders">Creating folders</a></li>
+     <li><a class="nav-link" href="#Deleting_files">Deleting files</a></li>
+     <li><a class="nav-link" href="#Scripting">Scripting</a></li>
+     <li><a class="nav-link" href="#Variables">Variables</a></li>
+    </ul>
+  </nav>
+</html>
+
+<!--
+  https://en.wikipedia.org/wiki/Bash_(Unix_shell)
+https://help.ubuntu.com/community/Beginners/BashScripting
+-->
+  
+  
+
+</body>
+
+</html>
